@@ -30,8 +30,36 @@
 #### => Can write other models too ( main is User's )
 ### 6.5 FILE UPLOAD
 #### => If there is file Uploading then first configure that in UTILs folder ( cloudinary ) usiing try catch | with cloduinary config(env)
-#### =>  simpley get the response and send the response  and unlink fs
+#### => simpley get the response and send the response  and unlink fs
+#### => Create middleware (Multer) simple use diskStorage with desistnation func req,file,cb (null / location )
+#### => filname: func// cd(null , filr.orginalname) simple export and then use it in user.router before the registerController
+#### => like use .fields specify name maxCont.
 
-### 7. CONTROLLERS | USER.CONTROLLER
+### 7. CONTROLLERS | USER.CONTROLLER | SIGNUP
 #### => go Stepwise = req.body ( valodate -> existed user -> uplaoding file -> create user -> fetch user (without pass)
-#### =>  ->
+#### =>  -> NOW TEST MAKE SURE USER CREATING , FILE UPLOADING , FILE UPLOAD URL FROM CLOUDNIARY AND ALREADY EIXITS is Working!
+
+### 7.1 CONTROLLERS | LOGIN
+#### => controller for LoginUser -> validate -> findInDB validate -> checkPass with user.method validate -> gen Tokens -> re Fresh the refreshTOken
+#### => fetch loggedIn user form DB (unselsct pass and rfeshtoken ) -> get otpions -> return res with cookies and json user: data | TEST route
+
+### 8  MIDDLEWARE | AUTH MIDDELWARE
+#### => create auth middelware -> get the cookies  req.cookies or header(authorization Breaer replace ) -> verify with jwt -> form that decodeToken
+#### => fetch the user ( -pass -refhestoken ) and req.user = user -> next | TEST PROTECTED ROUTE
+
+### 7.2 CONTROLLERS | REFRESH TOKEN ( REFRESHED )
+#### => get the token from req.cookies or req.body ( mobile as refhresh token ) -> verify -> fetch user and verify -> get the user'token
+#### => verify user's token with incoming token -> simply refresh the token from users' methods -> options -> return res with cookies and new json data | TEST route
+
+### 7.3 CONTROLLERS | UPDATE ACCOUNT DETAILS
+#### => get req.body -> findandUpdate user form req.user and $set the values -> fetch user -password and send repsonse in json | TEST ROUTE
+
+### 7.4 CONTROLLERS | UPDATE PASS
+#### => get the req.body -> fetch user -> match the oldpass to user's pass -> simple user.pass = newpass and awit save -> send the res | TEST ROUTE
+
+### 7.5 CONTROLLERS | USER'S PROFILE
+#### => simple return res with req.user thats all | TEST ROUTE
+
+
+
+
