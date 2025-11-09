@@ -60,6 +60,9 @@
 ### 7.5 CONTROLLERS | USER'S PROFILE
 #### => simple return res with req.user thats all | TEST ROUTE
 
+### 7.6 CONTROLLERS | FILE UPDATE
+#### => get the file form req.files?.path -> uploadOnCLoudnairy -> get the oldAvatar from user.avatar and delete it from cloud.delete
+#### => fetch the user -> $set avatar -password and send the user as response
 
 
 
