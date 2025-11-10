@@ -64,5 +64,7 @@
 #### => get the file form req.files?.path -> uploadOnCLoudnairy -> get the oldAvatar from user.avatar and delete it from cloud.delete
 #### => fetch the user -> $set avatar -password and send the user as response
 
-
+### 7.7 CONTROLLERS | GETTING OTHER'S DATA ( CHANNEL )
+#### => To create controller for getting other user's id or channel -> get the user req.params -> create mongo.aggreate pipeline -> $match the user 
+#### => -> $lookup for model form whihc you want the data -> hold them into varaible like $addField condition if you want -> at the end simply project everything expects pass and token #### => and send the res with data[0]
 
